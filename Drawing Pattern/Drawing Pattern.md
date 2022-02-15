@@ -1,3 +1,4 @@
+```
 Pattern
 
 #                    # # # # # # # #      # # # # # # # #                    #
@@ -94,3 +95,4 @@ Triangle
 1  5 10 10  5  1             1   5  10  10   5   1
 1  6 15 20 15  6  1        1   6  15  20  15   6   1
 (b) PascalTriangle1           (c) PascalTriangle2
+```
