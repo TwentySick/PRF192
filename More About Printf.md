@@ -26,3 +26,6 @@ Dưới đây là bảng các định dạng xuất thông dụng được sử 
 |       %e        | float                    | Xuất ra một số thực dưới dạng   |
 |                 |                          | số mũ                           |
 +-----------------+--------------------------+---------------------------------+
+
+Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
+--- | --- | --- |
