@@ -31,3 +31,5 @@ Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
 --- | --- | --- |
 %c | char | Xuất ra một ký tự |
 %s | char * | Xuất ra một chuỗi ký tự
+%d | int, short | Xuất ra một số nguyễn dưới dạng thập phân
+%u | unsigned int, unsigned short | Xuất ra một số nguyên dưới dạng thập phân không dấu
