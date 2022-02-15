@@ -13,7 +13,7 @@ Và đây là repository mình tạo ra với mục đích ghi lại những gì
 ## Một số kiến thức mở rộng về ngôn ngữ lập trình C cơ bản
 ### Bảng Định Dạng Xuất Trong C 
 
-Dưới đây là bảng các định dạng xuất thông dụng được sử  dụng trong hàm xuất xữ liệu trong C như printf(), fprintf(), sprintf().
+Dưới đây là bảng các định dạng xuất thông dụng được sử  dụng trong hàm xuất xữ liệu trong C như **printf(), fprintf(), sprintf()**.
 
 Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
 --- | --- | --- |
