@@ -33,3 +33,23 @@ Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
 %lf | double, unsigned long | Xuất ra số thực chính xác gấp đôi
 %a | double | Xuất ra một số thực chính xác kép thập lục phân
 
+### Bảng Định Dạng Nhập Trong C
+Dưới đây là bảng định dạng nhập thông dụng được sử dụng trong các hàm nhập dữ liệu trong C như **scanf(), fscanf(), sscanf()**.
+
+Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
+--- | --- | --- |
+%c | char | Nhập một ký tự
+%s | char * | Nhập một chuỗi ký tự
+%d | int, short | Nhập một số nguyên dưới dạng thập phân |
+%u | unsigned int, unsigned short | Nhập một số nguyên dưới dạng thập phân không dấu
+%x | int, short, unsigned int, unsigned short | Nhập một số nguyên dưới dạng thập lục phân 
+%o | int, short, unsigned int, unsigned short | Nhập một số nguyên dưới dạng bát phân
+%f | float | Nhập một số thực
+%e | float | Nhập một số thực dưới dạng số mũ
+%g | float | Nhập một số thực dưới dạng phù hợp nhất
+%ld | long | Nhập một số nguyên chính xác kép ở dạng thập phân
+%lu | unsigned long | Nhập số nguyên chính xác kép ở dạng thập phân không dấu
+%lo | long, unsigned long | Nhập số nguyên chính xác kép trong hệ bát phân
+%lx | long, unsigned long | Nhập số nguyên chính xác kép trong hệ lục phân
+%lf | double, unsigned long | Nhập số thực chính xác gấp đôi
+%a | double | Nhập một số thực chính xác kép thập lục phân
