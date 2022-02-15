@@ -641,3 +641,84 @@
 //	printf("BCNN: %d", boi_so);
 //}
 
+//**********************************************************************************************************************//
+//Nhap vao so nguyen n, tinh tong s = 1/1 + 1/2 + 1/3 + ... + 1/n
+//#include <stdio.h>
+//main(){
+//	int n, i;
+//	float sum = 0;
+//	printf("Nhap N: "); scanf("%d", &n);
+//	for(i = 1; i <= n; i++){
+//		sum = sum + 1.0/i;
+//	}
+//	printf("Tong S (1/1 + 1/2 + 1/3 + ... + 1/n): %.2f", sum);
+//}
+
+//**********************************************************************************************************************//
+//Nhap vao so nguyen n, tinh tong s = 1/2 + 2/3 + 3/4 + ... + (n-1)/n
+//#include <stdio.h>
+//main(){
+//	float sum = 0, n, i = 1;
+//	printf("Nhap N: "); scanf("%f", &n);
+//	while(i <n){
+//		sum = sum + i/(i+1);
+//		i++;
+//	}
+//	printf("Tong S (1/2 + 2/3 + 3/4 + ... + (n-1)/n): %.2f", sum);
+//}
+
+//**********************************************************************************************************************//
+//Nhap vao so nguyen n, tinh tong s = 1 + 11 + 111 + ... + 111...1(n so 1)
+//#include <stdio.h>
+//int SoHang(int n){
+//	int SoHang = 0, i;
+//	for(i = 1; i <=n; i++){
+//		SoHang = SoHang*10 + 1;
+//	}
+//	return SoHang;
+//}
+//main(){
+//	int n, i, tong = 0;// SoHang = 0;
+//	printf("Nhap N: "); scanf("%d", &n);
+//	for(i = 1; i<=n; i++){
+//		//SoHang = SoHang*10 + 1;
+//		tong = tong + SoHang(i);
+//	}
+//	printf("Tong S (1 + 11 + 111 +...+ 111..1 (n so 1)): %d", tong);
+//}
+
+//**********************************************************************************************************************//
+//Hinh chu nhat dac MxN
+//#include <stdio.h>
+//main(){
+//	int m, n;
+//	printf("Input M: "); scanf("%d", &m);
+//	printf("Input N: "); scanf("%d", &n);
+//	int i, j;
+//	for(i = 1; i <= m; i++){
+//		for(j = 1; j <= n; j++){
+//			printf("* ");
+//		}
+//		printf("\n");
+//	}
+//}
+
+//**********************************************************************************************************************//
+//Hinh chu nhat rong MxN
+//#include <stdio.h>
+//main(){
+//	int m, n;
+//	printf("Input M: "); scanf("%d", &m);
+//	printf("Input N: "); scanf("%d", &n);
+//	int i, j;
+//	for(i = 1; i <= m; i++){
+//		for(j = 1; j <= n; j++){
+//			if(i == 1 || i == m || j == 1 || j == n){
+//				printf("* ");
+//			} else {
+//				printf("  ");
+//			}
+//		}
+//		printf("\n");
+//	}
+//}
