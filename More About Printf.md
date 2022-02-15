@@ -29,3 +29,5 @@ Dưới đây là bảng các định dạng xuất thông dụng được sử 
 
 Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
 --- | --- | --- |
+%c | char | Xuất ra một ký tự |
+%s | char * | Xuất ra một chuỗi ký tự
