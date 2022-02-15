@@ -3,14 +3,24 @@
 // |                                READ ME                                | //
 // +-----------------------------------------------------------------------+ //
 // | File nay gom co:                                                      | //
-// | - Tam giac dac phai tren, phai duoi, trai tren, trai duoi             | //
+// | - Tam giac vuong can dac phai tren, phai duoi, trai tren, trai duoi   | //
 // | - Tam giac vuong can rong phai tren, phai duoi, trai tren, trai duoi  | //
 // | - Hinh vuong                                                          | //
 // | - Hinh thoi                                                           | //
+// | - In hinh bang so                                                     | //
 // +-----------------------------------------------------------------------+ //
 ///////////////////////////////////////////////////////////////////////////////
-
+// +--------------------------------------------------------+--------------+ //
+// | Coder: Cao Thanh Ahihi do cho                          | Version: 1.0 | //
+// +--------------------------------------------------------+--------------+ //
+///////////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
+
+int giaithua(int n){
+	int i, gt = 1;
+	for(i = 1; i<=n; i++) gt *= i;
+	return gt;
+}
 ///////////////////////////////////////////////////////////////////////////////
 // +-----------------------------------------------------------------------+ //
 // |   Hinh Tam Giac Dac                                                   | //
@@ -208,6 +218,7 @@ void TamGiacCanXuoiDac(int n){
 			else printf("  ");
 		}
 		printf("\n");
+		if(i<=n/2+1) break; 					//Just trinh` bay`. This is a fuckin optional!!!
 	}
 	printf("\n");
 }
@@ -215,7 +226,8 @@ void TamGiacCanXuoiDac(int n){
 void TamGiacCanNguocDac(int n){
 	int i,j;
 	printf("===> Tam Giac Can Nguoc Dac:\n\n");
-	for(i=1;i<=n;i++){
+//	for(i=1;i<=n;i++){ 							// This is the original fuckin code
+	for(i=n/2+1;i<=n;i++){ 						// Just trinh` bay`. If you don't want, just delete it and use the line before
 		for(j=1;j<=i;j++){
 			if(j>=n-i+1||i==n) printf("* ");
 			else printf("  ");
@@ -228,18 +240,217 @@ void TamGiacCanNguocDac(int n){
 void HinhThoiDac(int n){
 	int i,j, input;
 	printf("===> Hinh Thoi Dac:\n\n");
-	for(i=1;i<=n;i++){
+//	for(i=1;i<=n;i++){ 							// This is the original fuckin code
+	for(i=n/2+1;i<=n;i++){ 						// Just trinh` bay`. If you don't want, just delete it and use the line before
 		for(j=1;j<=i;j++){
 			if(j>=n-i+1||i==n) printf("* ");
 			else printf("  ");
 		}
 		printf("\n");
 	}
-	input = n%2==0?n:n-1; // Neu n chan thi tra ve gia tri n, neu n le thi tra ve gia tri n-1
-	for(i=input;i>0;i--){
+	input = n%2==0?n:n-1; 						// Neu n chan thi tra ve gia tri n, neu n le thi tra ve gia tri n-1
+//	for(i=input;i>0;i--){ 						// This is the original fuckin code
+	for(i=input;i>n/2;i--){ 					// Just trinh` bay`. If you don't want, just delete it and use the line before
 		for(j=1;j<=i;j++){
 			if(j>=n-i+1||i==n) printf("* ");
 			else printf("  ");
+		}
+		printf("\n");
+	}
+	printf("\n");
+} 
+///////////////////////////////////////////////////////////////////////////////
+// +-----------------------------------------------------------------------+ //
+// |   Hinh tam giac nhung co so                                           | //
+// +-----------------------------------------------------------------------+ //
+///////////////////////////////////////////////////////////////////////////////
+// ===> Tam giac phai tren nhung ma la so <===
+void TamGiacPhaiTrenSo(int n){
+	int i,j;
+	printf("===> Tam Giac Phai Tren Nhung Co So:\n\n");
+	for(i=1;i<=n;i++){
+		for(j=1;j<=i;j++){
+			printf("%2d ",j);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Tam giac phai duoi nhung ma la so <===
+void TamGiacPhaiDuoiSo(int n){
+	int i,j;
+	printf("===> Tam Giac Phai Duoi Nhung Co So:\n\n");
+	for(i=n;i>0;i--){
+		for(j=i;j>0;j--){
+			printf("%2d ", j);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Tam giac trai duoi nhung ma la so <===
+void TamGiacTraiDuoiSo(int n){
+	int i,j, number;
+	printf("===> Tam Giac Trai Duoi Nhung Co So:\n\n");
+	for(i=n;i>0;i--){
+		number = 1;
+		for(j=n;j>0;j--){
+			if(i>=j) printf("%2d ", number++);
+			else printf("%3s", "  ");
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Tam giac trai tren nhung ma la so <===
+void TamGiacTraiTrenSo(int n){
+	int i,j;
+	printf("===> Tam Giac Trai Tren Nhung Co So:\n\n");
+	for(i=1;i<=n;i++){
+		for(j=n;j>0;j--){
+			if(j<=i) printf("%2d ", j);
+			else printf("%3s", "  ");
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Tam giac can nguoc nhung ma la so <===
+void TamGiacCanNguocSo(int n){
+	int i,j;
+	printf("===> Tam Giac Can Nguoc Nhung Co So:\n\n");
+	for(i=1;i<=n;i++){
+		for(j=n-i;j>0;j--){						// In khoang trong tao hinh tam giac can 
+			printf("%3s", "  ");
+		}
+		for(j=1;j<=i;j++){						// In nua dau hinh tam giac can
+			printf("%2d ",j);
+		}
+		for(j=i-1;j>0;j--){						// In nua sau hinh tam giac can
+			printf("%2d ",j);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Tam giac can xuoi nhung ma la so <===
+void TamGiacCanXuoiSo(int n){
+	int i,j;
+	printf("===> Tam Giac Can Xuoi Nhung Co So:\n\n");
+	for(i=n;i>0;i--){
+		for(j=n-i;j>0;j--){						// In khoang trong tao hinh tam giac can
+			printf("%3s", "  ");
+		}
+		for(j=1;j<=i;j++){
+			printf("%2d ",j);
+		}
+		for(j=i-1;j>0;j--){
+			printf("%2d ",j);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Khuyet tam giac xuoi nhung ma la so <===
+void KhuyetTamGiacXuoiSo(int n){
+	int i,j;
+	printf("===> Khuyet Tam Giac Xuoi Nhung Co So:\n\n");
+	for(i=1;i<=n;i++){
+		// In nua dau
+		for(j=1;j<=i;j++) printf("%2d ",j);		// In so nua dau
+		for(j=n-i;j>0;j--) printf("%3s", "  ");        // In khoang trong nua dau
+		// In nua sau
+		for(j=n-i-1;j>0;j--) printf("%3s", "  ");   	// In khoang trong nua sau
+		if(i==n){								// In so nua sau dong cuoi cung
+			for(j=i-1;j>0;j--) printf("%2d ",j);
+		} else {								// In so nua sau neu khong phai dong cuoi cung
+			for(j=i;j>0;j--) printf("%2d ",j);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Khuyet tam giac nguoc nhung ma la so <===
+void KhuyetTamGiacNguocSo(int n){
+	int i,j;
+	printf("===> Khuyen Tam Giac Nguoc Nhung Co So:\n\n");
+	for(i=n;i>0;i--){
+		// In nua dau
+		for(j=1;j<=i;j++) printf("%2d ",j); 		// In so nua dau
+		for(j=n-i;j>0;j--) printf("%3s", "  ");    	// In khoang trong nua dau
+		// In nua sau
+		for(j=n-i-1;j>0;j--) printf("%3s", "  ");		// In khoang trong nua dau
+		if(i == n){								// In so nua sau neu la dong dau tien
+			for(j=i-1;j>0;j--) printf("%2d ",j);
+		} else {								// In so nua sau neu khong phai la dong dau tien
+			for(j=i;j>0;j--) printf("%2d ",j);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Hinh tam giac can nguoc nhung ma la lam <===
+void TamGiacCanNguocSo2(int n){
+	int i,j,number;
+	printf("===> Tam Giac Can Nguoc Co So Nhung Ma La Lam:\n\n");
+	for(i=1;i<=n;i++){
+		number = i;
+		for(j=1;j<=n-i;j++) printf("  ");		// In ra khoang trong tao hinh tam giac can
+		for(j=1;j<=i;j++){						// In so nua dau
+			printf("%d ",number%10);
+			number++;
+		}
+		number--;
+		for(j=i-1;j>0;j--){						// In so nua sau
+			number--;
+			printf("%d ", number%10);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> PowerOf2Triangle <===
+void PowerOf2Triangles(int n){
+	int i,j, number;
+	printf("===> Power of 2 Triangles:\n\n");
+	for(i=1;i<=n;i++){
+		number = 1;
+		for(j=n-i;j>0;j--) printf("%5c",' ');
+		for(j=1; j<=i;j++){
+			printf("%4d ", number);
+			number *= 2;
+		}
+		number /= 2;
+		for(j=i-1;j>0;j--){
+			number /= 2;
+			printf("%4d ", number);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Pascal Triangle 1 <===
+void PascalTriangle1(int n){
+	int i,j, number;
+	printf("===> Pascal Triangle 1:\n\n");
+	for(i=0;i<=n;i++){
+		for(j=0;j<=i;j++){						// In cac gia tri trong Pascal Triangle
+			number = giaithua(i)/(giaithua(j)*giaithua(i-j));
+			printf("%3d ", number);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// ===> Pascal Triangle 2 <===
+void PascalTriangle2(int n){
+	int i,j, number;
+	printf("===> Pascal Triangle 2:\n\n");
+	for(i=0;i<=n;i++){
+		for(j=n-i;j>0;j--) printf("%2c", ' ');
+		for(j=0;j<=i;j++){						// In cac gia tri trong Pascal Triangle
+			number = giaithua(i)/(giaithua(j)*giaithua(i-j));
+			printf("%4d", number);
 		}
 		printf("\n");
 	}
@@ -280,4 +491,21 @@ main(){
 	TamGiacCanXuoiDac(n);                    // hinh (j)
 	TamGiacCanNguocDac(n);                   // hinh (k)
 	HinhThoiDac(n);                          // hinh (l)
+	// ********** Hinh tam dac nhung co so ********** //
+	printf("\n+--------------------------------+\n");
+	printf("|        CUNG LA VE HINH         |\n");
+	printf("|          NHUNG CO SO           |\n");
+	printf("+--------------------------------+\n");
+	TamGiacPhaiTrenSo(n);                    // hinh (m)
+	TamGiacPhaiDuoiSo(n);					 // hinh (p)
+	TamGiacTraiTrenSo(n);					 // hinh (o)
+	TamGiacTraiDuoiSo(n);                    // hinh (n)
+	TamGiacCanNguocSo(n);					 // hinh (q)
+	TamGiacCanXuoiSo(n);					 // hinh (r)
+	KhuyetTamGiacXuoiSo(n);					 // hinh (s)
+	KhuyetTamGiacNguocSo(n);				 // hinh (t)
+	TamGiacCanNguocSo2(n);                   // hinh (u)
+	PowerOf2Triangles(n);					 // hinh (a)
+	PascalTriangle1(n);						 // hinh (b)
+	PascalTriangle2(n);						 // hinh (c)
 }
