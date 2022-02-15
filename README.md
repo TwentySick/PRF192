@@ -10,7 +10,8 @@ Và đây là repository mình tạo ra với mục đích ghi lại những gì
 - [Basic](https://github.com/TwentySick/PRF192/blob/78df4e5a6de71f78fab33b122def1fae053615e9/BasicC.c)
 - [Drawing Pattern](https://github.com/TwentySick/PRF192/blob/78df4e5a6de71f78fab33b122def1fae053615e9/Drawing%20Pattern/DrawingPattern.c)
 
-## Bảng Định Dạng Xuất Trong C 
+## Một số kiến thức mở rộng về ngôn ngữ lập trình C cơ bản
+### Bảng Định Dạng Xuất Trong C 
 
 Dưới đây là bảng các định dạng xuất thông dụng được sử  dụng trong hàm xuất xữ liệu trong C như printf(), fprintf(), sprintf().
 
