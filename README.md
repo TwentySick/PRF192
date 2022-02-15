@@ -11,6 +11,7 @@ Và đây là repository mình tạo ra với mục đích ghi lại những gì
 - [Drawing Pattern](https://github.com/TwentySick/PRF192/blob/78df4e5a6de71f78fab33b122def1fae053615e9/Drawing%20Pattern/DrawingPattern.c)
 
 ## Một số kiến thức mở rộng về ngôn ngữ lập trình C cơ bản
+Nguồn: [Lập Trình Căn Bản](https://laptrinhcanban.com/c/lap-trinh-c-co-ban/nhap-xuat-trong-c/ham-printf-va-cach-xuat-du-lieu-trong-c/)
 ### Bảng Định Dạng Xuất Trong C 
 
 Dưới đây là bảng các định dạng xuất thông dụng được sử  dụng trong hàm xuất xữ liệu trong C \
@@ -43,14 +44,15 @@ Ký tự đặc biệt | Ý nghĩa
 %d%% | In ra ký tự phần trăm
 
 ### Cách sử dụng nâng cao của printf trong C
->*%[flags][width][.precision][length]specifier*
+ 
+Cú pháp: *`%[flags][width][.precision][length]specifier`* 
 
 Trong đó:
-- *flags*: Chứa các chỉ định có tác dụng căn chỉnh, thêm dấu, đệm số 0,...
-- *width*: Độ dài tối thiểu của kết quả xuất
-- *.precision*: Độ dài chính xác khi xuất số thực (số chữ số đằng sau dấu phẩy số thực sau khi làm tròn)
-- *length*: Chỉ định bởi một trong các kí tự *h*, *l* hoặc *L* nhằm xác định số thuộc dạng short, long hay long double
-- *specifier*: là định dạng của chuỗi kết quả
+- `flags`: Chứa các chỉ định có tác dụng căn chỉnh, thêm dấu, đệm số 0,...
+- `width`: Độ dài tối thiểu của kết quả xuất
+- `.precision`: Độ dài chính xác khi xuất số thực (số chữ số đằng sau dấu phẩy số thực sau khi làm tròn)
+- `length`: Chỉ định bởi một trong các kí tự *h*, *l* hoặc *L* nhằm xác định số thuộc dạng short, long hay long double
+- `specifier`: là định dạng của chuỗi kết quả
 
 #### flags
 flag | Ý nghĩa
@@ -61,7 +63,24 @@ flag | Ý nghĩa
 space | Đệm dấu cách cho đủ độ dài kết quả xuất
 \# | Chỉ định các xuất dữ liệu khác
 
+#### width
+Đây là đối số chỉ định độ dài tối thiểu của chuỗi kết quả xuất ra màn hình. Nếu như độ dài của chuỗi kết quả **nhỏ hơn** giá trị của **width** thì các giá trị chỉ định trong `flags` như **số 0** hay **dấu cách** sẽ được sử dụng để đệm cho đủ độ dài **width**.
 
+#### .precision
+Đây là độ chính xác khi xuất ra màn hình các số thực dấu phẩy động như float hay double. Độ chính xác này nói cách khác chính là số chữ số ở phần thập phân của số thực khi xuất.\
+Ví dụ:
+```C
+// code:
+printf("X = %0.2f", 12.125);
+// output:
+X = 12.13
+```
+
+#### length
+Đây là đối số được chỉ định bởi một trong các ký tự *h*, *l* hoặc *L* nhằm xác định số thuộc dạng short, long hay double
+
+#### specifier
+Đây là phần chữ cái trong chuỗi định dạng C
 
 ### Bảng Định Dạng Nhập Trong C
 Dưới đây là bảng định dạng nhập thông dụng được sử dụng trong các hàm nhập dữ liệu trong C \
