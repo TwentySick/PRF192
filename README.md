@@ -2,6 +2,14 @@
 It's just something about programming with C language
 From IA1703
 
+## About me 😋
+Mình là một thằng gà mờ bắt đầu học code, tìm kiếm mày mò các kiểu các kiểu trên mạng với ước mơ trở thành Mr.Robot.
+Và đây là repository mình tạo ra với mục đích ghi lại những gì mình đã học tại lớp PRF192 và chia sẻ đến các bạn cùng khóa cũng như khóa sau
+
+## Một số bài C mà mình làm và up lên
+- [Basic](https://github.com/TwentySick/PRF192/blob/78df4e5a6de71f78fab33b122def1fae053615e9/BasicC.c)
+- [Drawing Pattern](https://github.com/TwentySick/PRF192/blob/78df4e5a6de71f78fab33b122def1fae053615e9/Drawing%20Pattern/DrawingPattern.c)
+
 ## Bảng Định Dạng Xuất Trong C 
 
 Dưới đây là bảng các định dạng xuất thông dụng được sử  dụng trong hàm xuất xữ liệu trong C như printf(), fprintf(), sprintf().
