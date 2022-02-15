@@ -13,7 +13,8 @@ Và đây là repository mình tạo ra với mục đích ghi lại những gì
 ## Một số kiến thức mở rộng về ngôn ngữ lập trình C cơ bản
 ### Bảng Định Dạng Xuất Trong C 
 
-Dưới đây là bảng các định dạng xuất thông dụng được sử  dụng trong hàm xuất xữ liệu trong C như **printf(), fprintf(), sprintf()**.
+Dưới đây là bảng các định dạng xuất thông dụng được sử  dụng trong hàm xuất xữ liệu trong C \
+Như: **printf(), fprintf(), sprintf()**.
 
 Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
 --- | --- | --- |
@@ -33,8 +34,38 @@ Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
 %lf | double, unsigned long | Xuất ra số thực chính xác gấp đôi
 %a | double | Xuất ra một số thực chính xác kép thập lục phân
 
+### Ký tự đặc biệt
+Ký tự đặc biệt | Ý nghĩa
+--- | ---
+\n | Xuống dòng
+\t | Dấu tab
+\0 | Kết thúc chuỗi
+%d%% | In ra ký tự phần trăm
+
+### Cách sử dụng nâng cao của printf trong C
+>*%[flags][width][.precision][length]specifier*
+
+Trong đó:
+- *flags*: Chứa các chỉ định có tác dụng căn chỉnh, thêm dấu, đệm số 0,...
+- *width*: Độ dài tối thiểu của kết quả xuất
+- *.precision*: Độ dài chính xác khi xuất số thực (số chữ số đằng sau dấu phẩy số thực sau khi làm tròn)
+- *length*: Chỉ định bởi một trong các kí tự *h*, *l* hoặc *L* nhằm xác định số thuộc dạng short, long hay long double
+- *specifier*: là định dạng của chuỗi kết quả
+
+#### flags
+flag | Ý nghĩa
+--- | ---
+\- | Căn trái
+\+ | Thêm dấu cho số
+0 | Đệm số 0 cho đủ độ dài kết quả xuất
+space | Đệm dấu cách cho đủ độ dài kết quả xuất
+\# | Chỉ định các xuất dữ liệu khác
+
+
+
 ### Bảng Định Dạng Nhập Trong C
-Dưới đây là bảng định dạng nhập thông dụng được sử dụng trong các hàm nhập dữ liệu trong C như **scanf(), fscanf(), sscanf()**.
+Dưới đây là bảng định dạng nhập thông dụng được sử dụng trong các hàm nhập dữ liệu trong C \
+Như: **scanf(), fscanf(), sscanf()**.
 
 Chuỗi định dạng | Đại diện cho kiểu ký tự | Ý nghĩa |
 --- | --- | --- |
