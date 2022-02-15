@@ -9,6 +9,7 @@ Và đây là repository mình tạo ra với mục đích ghi lại những gì
 ## Một số bài C mà mình làm và up lên
 - [Basic](https://github.com/TwentySick/PRF192/blob/78df4e5a6de71f78fab33b122def1fae053615e9/BasicC.c)
 - [Drawing Pattern](https://github.com/TwentySick/PRF192/blob/78df4e5a6de71f78fab33b122def1fae053615e9/Drawing%20Pattern/DrawingPattern.c)
+- [Special Numbers](https://github.com/TwentySick/PRF192/blob/aec2f4a72d69011b14842f7746e4096ca93b7e94/SpecialNumber.c)
 
 ## Một số kiến thức mở rộng về ngôn ngữ lập trình C cơ bản
 Nguồn: [Lập Trình Căn Bản](https://laptrinhcanban.com/c/lap-trinh-c-co-ban/nhap-xuat-trong-c/ham-printf-va-cach-xuat-du-lieu-trong-c/)
