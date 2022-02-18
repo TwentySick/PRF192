@@ -15,12 +15,8 @@
 // +--------------------------------------------------------+--------------+ //
 ///////////////////////////////////////////////////////////////////////////////
 #include <stdio.h>
+#include <math.h>
 
-int giaithua(int n){
-	int i, gt = 1;
-	for(i = 1; i<=n; i++) gt *= i;
-	return gt;
-}
 ///////////////////////////////////////////////////////////////////////////////
 // +-----------------------------------------------------------------------+ //
 // |   Hinh Tam Giac Dac                                                   | //
@@ -213,12 +209,11 @@ void TamGiacCanXuoiDac(int n){
 	int i,j;
 	printf("===> Tam Giac Can Xuoi Dac:\n\n");
 	for(i=n;i>0;i--){
-		for(j=1;j<=i;j++){
-			if(j>=n-i+1||i==n) printf("* ");
-			else printf("  ");
-		}
+		for(j=1;j<=n-i;j++){printf("  ");	}
+		for(j=1;j<=i;j++){ printf("* ");}
+		for(j=1;j<=i-1;j++){printf("* ");	}
+
 		printf("\n");
-		if(i<=n/2+1) break; 					//Just trinh` bay`. This is a fuckin optional!!!
 	}
 	printf("\n");
 }
@@ -226,12 +221,11 @@ void TamGiacCanXuoiDac(int n){
 void TamGiacCanNguocDac(int n){
 	int i,j;
 	printf("===> Tam Giac Can Nguoc Dac:\n\n");
-//	for(i=1;i<=n;i++){ 							// This is the original fuckin code
-	for(i=n/2+1;i<=n;i++){ 						// Just trinh` bay`. If you don't want, just delete it and use the line before
-		for(j=1;j<=i;j++){
-			if(j>=n-i+1||i==n) printf("* ");
-			else printf("  ");
-		}
+	for(i=1;i<=n;i++){
+		for(j=1;j<=n-i;j++){printf("  ");	}
+		for(j=1;j<=i;j++){ printf("* ");}
+		for(j=1;j<=i-1;j++){printf("* ");	}
+
 		printf("\n");
 	}
 	printf("\n");
@@ -240,21 +234,18 @@ void TamGiacCanNguocDac(int n){
 void HinhThoiDac(int n){
 	int i,j, input;
 	printf("===> Hinh Thoi Dac:\n\n");
-//	for(i=1;i<=n;i++){ 							// This is the original fuckin code
-	for(i=n/2+1;i<=n;i++){ 						// Just trinh` bay`. If you don't want, just delete it and use the line before
-		for(j=1;j<=i;j++){
-			if(j>=n-i+1||i==n) printf("* ");
-			else printf("  ");
-		}
+	for(i=1;i<=n;i++){ // In nua tren
+		for(j=1;j<=n-i;j++){printf("  ");	}
+		for(j=1;j<=i;j++){ printf("* ");}
+		for(j=1;j<=i-1;j++){printf("* ");	}
+
 		printf("\n");
 	}
-	input = n%2==0?n:n-1; 						// Neu n chan thi tra ve gia tri n, neu n le thi tra ve gia tri n-1
-//	for(i=input;i>0;i--){ 						// This is the original fuckin code
-	for(i=input;i>n/2;i--){ 					// Just trinh` bay`. If you don't want, just delete it and use the line before
-		for(j=1;j<=i;j++){
-			if(j>=n-i+1||i==n) printf("* ");
-			else printf("  ");
-		}
+	for(i=n-1;i>0;i--){ // In nua duoi
+		for(j=1;j<=n-i;j++){printf("  ");	}
+		for(j=1;j<=i;j++){ printf("* ");}
+		for(j=1;j<=i-1;j++){printf("* ");	}
+
 		printf("\n");
 	}
 	printf("\n");
@@ -409,6 +400,13 @@ void TamGiacCanNguocSo2(int n){
 	}
 	printf("\n");
 }
+// ********* Pascal Triangle ********** //
+int giaithua(int n){
+	int i, gt = 1;
+	for(i = 1; i<=n; i++) gt *= i;
+	return gt;
+}
+
 // ===> PowerOf2Triangle <===
 void PowerOf2Triangles(int n){
 	int i,j, number;
@@ -456,6 +454,48 @@ void PascalTriangle2(int n){
 	}
 	printf("\n");
 }
+// ************************************ //
+
+// ************** Tam giac Fibonacci ************** //
+float g(int x){ // Ap dung cong thuc tinh cua Binet ket hop voi day so Lucas
+	float a = (1+sqrt(5))/2;
+	float b = (1-sqrt(5))/2;
+	return (pow(a, x) + pow(b, x));
+}
+
+float number(float m, float n){  				// Tinh gia tri in ra tai vi tri (m;n) trong he toa do
+	float result;	
+	result = (g(m+2) + pow(-1, n)*g(m-2*n))/5;
+	return result;
+}
+
+void FibonacciTriangle(int n){
+	int i,j;
+	printf("===> Fibonacci Triangle:\n\n");
+	for(i=0;i<=n;i++){
+		for(j=n-i;j>0;j--) printf("%2c", ' ');
+		for(j=0;j<=i;j++){						// In cac gia tri trong Fibonacci Triangle
+			printf("%4.0f", number(i,j));
+		}
+		printf("\n");
+	}
+	printf("\n");
+	
+}
+// ************************************************ //
+
+void FloydTriangle(int n){
+	int i,j, number = 1;
+	printf("===> Floyd Triangle:\n\n");
+	for(i=1; i<=n; i++){
+		for(j=1;j<=i;j++){
+			printf("%3d ", number++);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+
 main(){
 	int n;
 	printf("Input N: "); scanf("%d", &n);
@@ -508,4 +548,7 @@ main(){
 	PowerOf2Triangles(n);					 // hinh (a)
 	PascalTriangle1(n);						 // hinh (b)
 	PascalTriangle2(n);						 // hinh (c)
+	FibonacciTriangle(n);
+	FloydTriangle(n);
+	
 }
