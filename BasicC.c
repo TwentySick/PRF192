@@ -514,6 +514,19 @@
 //		else 				menh_gia_tien = menh_gia_tien /2; //QL cac menh gia 200, 100, 20, 10, 2, 1
 //	}
 //}
+//Dung mang
+//#include <stdio.h>
+//#include <math.h>
+//main(){
+//	int n, i, so_to;
+//	int menh_gia_tien[9] = {500, 200, 100, 50, 20, 10, 5, 2, 1};
+//	printf("Nhap so tien: "); scanf("%d", &n);
+//		for(i=0; i<10; i++){
+//			so_to = n / menh_gia_tien[i];
+//			printf("So to tien %d: %d\n", menh_gia_tien[i], so_to);
+//			n = n % menh_gia_tien[i];
+//		}
+//	}
 
 //**********************************************************************************************************************//
 // Uoc so chung lon nhat cua a va b
@@ -720,5 +733,190 @@
 //			}
 //		}
 //		printf("\n");
+//	}
+//}
+
+//******** Array
+//**********************************************************************************************************************//
+// Binary
+// Cach 1
+//#include <stdio.h>
+//main(){
+//	int a[100], n, i;
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i=0; n>0; i++){
+//		a[i] = n%2;
+//		n = n/2;
+//	}
+//	printf("\nN in binary is ");
+//	for(i=i-1; i>=0; i--){
+//		printf("%d", a[i]);
+//	}
+//}
+
+// Cach 2
+//#include <stdio.h>
+//main(){
+//	int n, k, m;
+//	char a[32];
+//	printf("Input N: "); scanf("%d", &n);
+//	k = 0; m = n;
+//	while(m!=0){
+//		a[k++]=m%2;
+//		m/=2;
+//	}
+//	printf("N = %d in binary system", n);
+//	for(m=k-1; m>=0; m--){
+//		printf("%d", a[m]);
+//	}
+//}
+
+// Chuyen he so Decimal sang he Octal va he Hexa
+
+//**********************************************************************************************************************//
+// Nhap mang n phan tu, tim max va vi tri cua no trong mang
+//#include <stdio.h>
+//
+//main(){
+//	int n, i, vtmax = 0, max, a[100];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i=0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	} // Khai bao
+//	max = a[0];
+//	for(i = 1; i<n; i++){
+//		if(max<a[i]){
+//			max = a[i];
+//			vtmax = i;
+//		}
+//	}
+//	printf("\nMAX: %d\nVi tri MAX: %d", max, vtmax);
+//}
+
+//**********************************************************************************************************************//
+// Nhap mang n phan tu, tinh tong, trung binh cong, trung binh nhan cua cac phan tu trong mang
+//#include <stdio.h>
+//#include <math.h>
+//
+//main(){
+//	float tong = 0, tich = 1, tbc, tbn, a[100];
+//	int i, n;
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i=0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%f", &a[i]);
+//	} // Khai bao
+//	for(i=0; i<n; i++){
+//		tong = tong+a[i];
+//		tich = tich * a[i];
+//	}
+//	tbc = tong / n;
+//	tbn = pow(tich, 1.0/n);
+//	printf("\nTong: %.2f\nTrung binh cong: %.2f\nTrung binh nhan: %.2f", tong, tbc, tbn);
+//}
+
+//**********************************************************************************************************************//
+// Nhap mang N phan tu, tinh tong 3 so nguyen to cuoi cung
+//#include <stdio.h>
+//#include <math.h>
+//
+//int isPrime(int n){
+//	int i;
+//	if(n<=1) return 0;
+//	else{
+//		for(i = 2; i<= sqrt(n); i++){
+//			if(n % i == 0){
+//				return 0;
+//				break;
+//			}
+//		}
+//	}
+//	return 1;
+//}
+//
+//main(){
+//	int i,n, sum = 0, count = 0, arr[100];
+//	
+//	do{
+//	system("cls");
+//	printf("Nhap N: "); scanf("%d", &n);
+//	} while(n<3);
+//	
+//	for(i = 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &arr[i]);
+//	}
+//	
+//	for(i=n-1; i>=0; i--){
+//		if(isPrime(arr[i])){
+//			sum = sum + arr[i];
+//			count++;
+//		}
+//		if(count == 3) break;
+//	}
+//	if(count == 3) printf("Tong 3 so nguyen to cuoi mang: %d", sum);
+//	else printf("Mang khong du so nguyen to");
+//}
+
+//**********************************************************************************************************************//
+// Sap xep cac phan tu o vi tri chan tang dan, vi tri le giam dan
+//#include <stdio.h>
+//
+//const MAX = 100;
+//
+//main(){
+//	// Khai bao
+//	int i, j, n, t, a[MAX];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//	// **** 2 vong for **** //
+//	// Sap xep vi tri chan
+//	for(i=0; i<n-1; i= i+2){
+//		for(j = i+2; j<n; j+=2){ // 1 2 3 4 5 6 7 8 9 10
+//			if(a[i] > a[j]){
+//				t = a[i];
+//				a[i] = a[j];
+//				a[j] = t;
+//			}
+//		}
+//	}
+//	// Sap xep vi tri le
+//	for(i=1; i<n-1; i= i+2){
+//		for(j = i+2; j<n; j+=2){
+//			if(a[i] < a[j]){
+//				t = a[i];
+//				a[i] = a[j];
+//				a[j] = t;
+//			}
+//		}
+//	}
+//	
+//	// **** 1 vong for **** //
+//	for(i=0; i<n-1; i++){
+//		for(j=i+1; j<n; j++){
+//			if(i%2 == 0 && j%2 == 0){
+//				if(a[i] > a[j]){
+//					t = a[i];
+//					a[i] = a[j];
+//					a[j] = t;
+//				}
+//			} else if (i%2 != 0 && j%2 != 0){
+//				if(a[i] < a[j]){
+//					t = a[i];
+//					a[i] = a[j];
+//					a[j] = t;
+//				}
+//			}
+//		}
+//	}
+//	
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
 //	}
 //}
