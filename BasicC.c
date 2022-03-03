@@ -920,3 +920,149 @@
 //		printf("%d ", a[i]);
 //	}
 //}
+
+//**********************************************************************************************************************//
+// Sap xep cac phan tu co gia tri chan tang dan, gia tri le giam dan
+//#include <stdio.h>
+//
+//const MAX = 100;
+//
+//main(){
+//	// Khai bao
+//	int i, j, n, t, a[MAX];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//
+//	// Sap xep 
+//	for(i=0; i<n; i++){
+//		for(j = i+1; j<n; j++){
+//			if(a[i] % 2 ==0 && a[j] % 2 ==0 && a[i] > a[j]){ 			// Gia tri chan 
+//				t = a[i];
+//				a[i] = a[j];
+//				a[j] = t;
+//			} else if (a[i] % 2 != 0 && a[j] % 2 != 0 && a[i] < a[j]){ 	// Gia tri le
+//				t = a[i];
+//				a[i] = a[j];
+//				a[j] = t;
+//			}
+//		}
+//	}
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//**********************************************************************************************************************//
+// Sap xep 3 so nguyen to cuoi cung
+//#include <stdio.h>
+//
+//const MAX = 100;
+//
+//int isPrime(int n){
+//	int i, count = 0;
+//	if(n <= 1) return 0;
+//	else {
+//		for(i = 2; i*i <= n; i++){
+//			if(n % i == 0) return 0;;
+//		} 
+//	}
+//	return 1;
+//}
+//
+//main(){
+//	// Khai bao
+//	int i, j, n, t, count = 0; 
+//	int a[MAX], b[3], k = 0;
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//
+//	// Lay 3 so nguyen to cuoi cung cho vao mang b
+//	for(i = n-1; i>=0; i--){
+//		if(isPrime(a[i]) == 1){
+//			b[k] = a[i];
+//			count++;
+//			k++;
+//		}
+//		if(count == 3) break;
+//	}
+//	// Sap xep cac phan tu trong mang b theo thu tu giam dan	
+//	for(i = 0; i<2; i++){
+//		for(j = i+1; j<3; j++){
+//			if(b[i] < b[j]){	 //swap(&a[i], &a[j]);
+//				t = b[i];
+//				b[i] = b[j];
+//				b[j] = t;	
+//			}
+//		}
+//	}
+//	// Gan nguoc lai gia tri vao mang a
+//	k = 0;
+//	for(i = n-1; i>=0; i--){
+//		if(isPrime(a[i]) == 1){
+//			a[i] = b[k];
+//			count++;
+//			k++;
+//		}
+//		if(k == 3) break;
+//	}
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//**********************************************************************************************************************//
+// Sap xep n phan tu, floating point 3 so sau dau phay, cach nhau boi dau -, dung interchange
+//#include <stdio.h>
+//
+//const MAX = 100;
+//
+//main(){
+//	// Khai bao
+//	int i, j, n, t; 
+//	float a[MAX];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%f", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%.3f", a[i]);
+//		if(i != n-1) printf(" - ");
+//	}
+//
+//	// Sap xep 
+//	for(i = 0; i<n-1; i++){
+//		for(j = i+1; j<n; j++){
+//			if(a[i] > a[j]){	 //swap(&a[i], &a[j]);
+//			t = a[i];
+//			a[i] = a[j];
+//			a[j] = t;	
+//			}
+//		}
+//	}
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%.3f", a[i]);
+//		if(i != n-1) printf(" - ");
+//	}
+//}
