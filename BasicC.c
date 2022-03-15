@@ -1225,3 +1225,417 @@
 //		if(i != n-1) printf(" - ");
 //	}
 //}
+
+//**********************************************************************************************************************//
+// Dao nguoc
+// Cach 1
+//#include <stdio.h>
+//main(){
+//	int a[100];
+//	int n, i, temp;
+//	printf("Input size of array: "); scanf("%d", &n);
+//	for(i = 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("\nArray before sort\n");
+//	for(i=0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//	// Dao nguoc
+//	for(i = 0; i<n/2; i++){
+//		temp = a[i];
+//		a[i] = a[n-1-i];
+//		a[n-1-i] = temp;
+//	}
+//	printf("\nArray after sort\n");
+//	for(i=0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+// Cach 2
+//#include <stdio.h>
+//main(){
+//	int a[100];
+//	int n, i = 0;
+//	printf("Input size of array: "); scanf("%d", &n);
+//	for(i = 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("\nArray before sort\n");
+//	for(i=0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//	// Dao nguoc
+//	int j = n-1;
+//		i = 0;
+//	while (i<j){
+//		int temp = a[i];
+//			a[i] = a[j];
+//			a[j] = temp;
+//			i++;
+//			j--;
+//	}
+//	printf("\nArray after sort\n");
+//	for(i=0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//**********************************************************************************************************************//
+// Dao nguoc 4 so nguyen to dau tien
+// Cach 1
+//#include <stdio.h>
+//const MAX = 100;
+//int isPrime(int n){
+//	int i, count = 0;
+//	if(n <= 1) return 0;
+//	else {
+//		for(i = 2; i*i <= n; i++){
+//			if(n % i == 0) return 0;;
+//		} 
+//	}
+//	return 1;
+//}
+//
+//main(){
+//	// Khai bao
+//	int i, j, n, t, count = 0; 
+//	int a[MAX], b[4], k = 0;
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//
+//	// Lay 4 so nguyen to dau tien cho vao mang b
+//	for(i = 0; i<n; i++){
+//		if(isPrime(a[i]) == 1){
+//			b[k] = a[i];
+//			count++;
+//			k++;
+//		}
+//		if(count == 4) break;
+//	}
+//
+//	// Gan nguoc lai gia tri vao mang a
+//	k -= 1;
+//	for(i = 0; i<n; i++){
+//		if(isPrime(a[i]) == 1){
+//			a[i] = b[k];
+//			count++;
+//			k--;
+//		}
+//		if(k == -1) break;
+//	}
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+// Cach 2
+//#include <stdio.h>
+//const MAX = 100;
+//int isPrime(int n){
+//	int i, count = 0;
+//	if(n <= 1) return 0;
+//	else {
+//		for(i = 2; i*i <= n; i++){
+//			if(n % i == 0) return 0;;
+//		} 
+//	}
+//	return 1;
+//}
+//
+//main(){
+//	// Khai bao
+//	int i, n, count = 0; 
+//	int a[MAX], b[4], x = 0, pos;
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//
+//	// Lay vi tri cua so nguyen to thu 4 trong mang
+//	i = 0;
+//	while(count<4 && i<n){
+//		if(isPrime(a[i]) == 1){
+//			pos = i;
+//			count++;
+//		}
+//		i++;
+//	}
+//	
+//	// Sap xep
+//	while(x<pos){
+//		if(isPrime(a[x]) == 1 && isPrime(a[pos]) == 1){
+//			int temp = a[x];
+//				a[x] = a[pos];
+//				a[pos] = temp;
+//		}
+//		if(isPrime(a[x]) == 1) pos--;
+//		if(isPrime(a[pos]) == 1) x++;
+//	}
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//**********************************************************************************************************************//
+// Thay the so nguyen to thu 2 thanh binh phuong cua no tinh tu duoi len
+//#include <stdio.h>
+//const MAX = 100;
+//int isPrime(int n){
+//	int i, count = 0;
+//	if(n <= 1) return 0;
+//	else {
+//		for(i = 2; i*i <= n; i++){
+//			if(n % i == 0) return 0;;
+//		} 
+//	}
+//	return 1;
+//}
+//
+//main(){
+//	// Khai bao
+//	int i, j, n, t, count = 0; 
+//	int a[MAX], b[4], k = 0;
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//
+//	for(i = n-1; i>=0; i--){
+//		if(isPrime(a[i]) == 1) count++;
+//		if(count == 2){
+//			a[i] = a[i] * a[i];
+//			break;
+//		}
+//	}
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//**********************************************************************************************************************//
+// Thay the so cach thu 3 vi tri so nguyen to thu 2 thanh binh phuong cua no tinh tu duoi len
+//#include <stdio.h>
+//const MAX = 100;
+//int isPrime(int n){
+//	int i, count = 0;
+//	if(n <= 1) return 0;
+//	else {
+//		for(i = 2; i*i <= n; i++){
+//			if(n % i == 0) return 0;;
+//		} 
+//	}
+//	return 1;
+//}
+//
+//main(){
+//	// Khai bao
+//	int i, n, count = 0; 
+//	int a[MAX];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//
+//	for(i = n-1; i>=0; i--){
+//		if(isPrime(a[i]) == 1) count++;
+//		if(count == 2){
+//			a[i-3] = a[i-3] * a[i-3];
+//			break;
+//		}
+//	}
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+
+//**********************************************************************************************************************//
+// Them so 99 vao vi tri thu 5
+//#include <stdio.h>
+//const MAX = 100;
+//main(){
+//	// Khai bao
+//	int i, n, index = 5; 
+//	int a[MAX];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//
+//	for(i = n-1; i>= index; i--){
+//		a[i+1] = a[i];
+//	}
+//		n = n+1;
+//		a[index] = 99;
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//**********************************************************************************************************************//
+// Them so 99 vao dang truoc 2 phan tu so voi phan thu 3 la so chan
+//#include <stdio.h>
+//const MAX = 100;
+//main(){
+//	// Khai bao
+//	int i, n, index = 0, count = 0; 
+//	int a[MAX];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//	
+//	for(i = 0; i<n; i++){
+//		if(a[i] % 2 == 0){
+//			index = i;
+//			count++;
+//		}
+//		if(count == 3) break;
+//	}
+//
+//	for(i = n-1; i>= index-2; i--){
+//		a[i+1] = a[i];
+//	}
+//		n = n+1;
+//		a[index-2] = 99;
+//
+//	// Output
+//	printf("\nAfter sort:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//**********************************************************************************************************************//
+// Them so 99 vao dang truoc snt
+//#include <stdio.h>
+//const MAX = 100;
+//int isPrime(int n){
+//	int i, count = 0;
+//	if(n <= 1) return 0;
+//	else {
+//		for(i = 2; i*i <= n; i++){
+//			if(n % i == 0) return 0;;
+//		} 
+//	}
+//	return 1;
+//}
+//main(){
+//	// Khai bao
+//	int i, n, j, count = 0; 
+//	int a[MAX];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	printf("Before:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//	
+//	for(i = 0; i<n; i++){
+//		if(isPrime(a[i]) == 1){
+//			for(j = n-1; j>=i; j--){ 
+//				a[j+1] = a[j];
+//			}
+//			n=n+1;
+//			a[i] = 99;
+//			i+=1;
+//		}
+//	}
+//
+//	// Output
+//	printf("\nAfter:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
+
+//**********************************************************************************************************************//
+// Xoa snt thu k trong mang
+//#include <stdio.h>
+//const MAX = 100;
+//int isPrime(int n){
+//	int i, count = 0;
+//	if(n <= 1) return 0;
+//	else {
+//		for(i = 2; i*i <= n; i++){
+//			if(n % i == 0) return 0;;
+//		} 
+//	}
+//	return 1;
+//}
+//main(){
+//	// Khai bao
+//	int i, n, k, j, count = 0; 
+//	int a[MAX];
+//	printf("Input N: "); scanf("%d", &n);
+//	for(i= 0; i<n; i++){
+//		printf("A[%d]: ", i); scanf("%d", &a[i]);
+//	}
+//	
+//	printf("K: "); scanf("%d", &k);
+//	
+//	printf("Before:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//	
+//	for(i = 0; i<n; i++){
+//		if(isPrime(a[i]) == 1) count++;
+//		if(count == k){
+//			for(j = i; j<n; j++) a[j] = a[j+1];
+//			n = n-1;
+//			break;
+//		}
+//	}
+//
+//	// Output
+//	printf("\nAfter:\n");
+//	for(i= 0; i<n; i++){
+//		printf("%d ", a[i]);
+//	}
+//}
