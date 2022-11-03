@@ -483,6 +483,22 @@ void FibonacciTriangle(int n){
 	
 }
 // ************************************************ //
+void FibonacciTriangle2(int n){
+	int i,j, a = 0, b = 1, c;
+	printf("===> Fibonacci Triangle 2:\n\n");
+	for(i = 1; i <= n; i++){
+		a = 0; b = 1;
+		printf("%d ", b);
+		for(j = 2; j <= i; j++){
+			c = a+b;
+			a = b;
+			b = c;
+			printf("%d ", c);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
 
 void FloydTriangle(int n){
 	int i,j, number = 1;
@@ -490,6 +506,33 @@ void FloydTriangle(int n){
 	for(i=1; i<=n; i++){
 		for(j=1;j<=i;j++){
 			printf("%3d ", number++);
+		}
+		printf("\n");
+	}
+	printf("\n");
+}
+// Prime Floyd Triangle
+
+int isPrime(int n){
+	int i, count = 0;
+	if(n == 0 || n == 1) return 0;
+	for(i = 2; i <= sqrt(n); i++){
+		if (n % i == 0) count++;
+	}
+	if(count !=0) return 0;
+	return 1;
+}
+
+void PrimeFloydTriangle(int n){
+	int i, j, k = 2;
+	printf("===> Prime Floyd Triangle:\n\n");
+	for(i=1; i<=n; i++){
+		for (j=1; j <= i; j++){
+			while(!isPrime(k)){
+				k++;
+			}
+			printf("%d ", k);
+			k++;
 		}
 		printf("\n");
 	}
@@ -549,6 +592,7 @@ main(){
 	PascalTriangle1(n);						 // hinh (b)
 	PascalTriangle2(n);						 // hinh (c)
 	FibonacciTriangle(n);
+	FibonacciTriangle2(n);
 	FloydTriangle(n);
-	
+	PrimeFloydTriangle(n);
 }
